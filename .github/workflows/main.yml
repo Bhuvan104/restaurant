@@ -1,0 +1,29 @@
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout develop branch
+      uses: actions/checkout@v2
+      with:
+        ref: develop
+
+    - name: Set up Git
+      run: |
+        git config --global user.name "Bhuvan104"
+        git config --global user.email "bhuvankumarpy@gmail.com"
+
+    - name: Checkout main branch
+      run: |
+        git fetch origin
+        git checkout main
+
+    - name: Merge develop into main
+      run: |
+        git merge develop
+
+    - name: Push changes to main
+      run: |
+        git push origin main
+      env:
+        GITHUB_TOKEN: ${{ secrets.test }}
