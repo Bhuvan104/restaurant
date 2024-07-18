@@ -23,3 +23,4 @@ connectDB().then(()=>{
         console.log("server started",PORT)
     })
 })
+//This is the starting page
