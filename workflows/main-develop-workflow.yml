@@ -1,3 +1,10 @@
+name: Sync Develop to Main
+
+on:
+  push:
+    branches:
+      - develop  # Trigger on pushes to the develop branch
+
 jobs:
   sync:
     runs-on: ubuntu-latest
@@ -26,4 +33,4 @@ jobs:
       run: |
         git push origin main
       env:
-        GITHUB_TOKEN: ${{ secrets.test }}
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
