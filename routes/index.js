@@ -31,3 +31,5 @@ router.post("/addtocart",authToken,addToCartController)
 router.get('/checkCart/:productId',authToken, checkCartController);
 router.get('/checkCartcount',authToken, checkCartCountController);
 module.exports=router
+
+//First page router
