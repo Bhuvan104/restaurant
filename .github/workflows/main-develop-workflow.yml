@@ -28,7 +28,7 @@ jobs:
 
     - name: Merge develop into main
       run: |
-        git merge develop
+        git merge develop --allow-unrelated-histories
 
     - name: Push changes to main
       run: |
