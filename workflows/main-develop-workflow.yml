@@ -4,6 +4,8 @@ on:
   push:
     branches:
       - develop  # Trigger on pushes to the develop branch
+env:
+  name: test
 
 jobs:
   sync:
@@ -12,8 +14,7 @@ jobs:
     steps:
     - name: Checkout develop branch
       uses: actions/checkout@v2
-      with:
-        ref: develop
+
 
     - name: Set up Git
       run: |
@@ -33,4 +34,4 @@ jobs:
       run: |
         git push origin main
       env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GITHUB_TOKEN: ${{ secrets.TOKEN }}
