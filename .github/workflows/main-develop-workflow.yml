@@ -24,7 +24,7 @@ jobs:
     - name: Checkout bhuvan branch
       run: |
         git fetch origin
-        git checkout bhuvan
+        git checkout mass
 
     - name: Merge develop into bhuvan
       run: |
@@ -32,6 +32,6 @@ jobs:
 
     - name: Push changes to bhuvan
       run: |
-        git push origin bhuvan
+        git push origin mass
       env:
         GITHUB_TOKEN: ${{ secrets.TOKEN }}
