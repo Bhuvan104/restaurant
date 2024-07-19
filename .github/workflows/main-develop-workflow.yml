@@ -21,17 +21,17 @@ jobs:
         git config --global user.name "Bhuvan104"
         git config --global user.email "bhuvankumarpy@gmail.com"
 
-    - name: Checkout main branch
+    - name: Checkout bhuvan branch
       run: |
         git fetch origin
-        git checkout main
+        git checkout bhuvan
 
-    - name: Merge develop into main
+    - name: Merge develop into bhuvan
       run: |
         git merge develop --allow-unrelated-histories
 
-    - name: Push changes to main
+    - name: Push changes to bhuvan
       run: |
-        git push origin main
+        git push origin bhuvan
       env:
         GITHUB_TOKEN: ${{ secrets.TOKEN }}
